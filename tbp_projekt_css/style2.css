@@ -1,0 +1,122 @@
+/* Opći reset i osnovne postavke */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #d4e1c4, #9bba8c); /* Prirodna zelena gradijent pozadina */
+    color: #333333; /* Tamno siva za tekst */
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    color: #4C8C4A; /* Tamno zelena */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Stil za formu */
+form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: scale(1.05); /* Lagano uvećanje pri hoveru */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #4C8C4A; /* Tamno zelena */
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #4C8C4A; /* Tamno zelena */
+    border-radius: 8px;
+    background-color: #f1f1f1; /* Svijetlosiva pozadina inputa */
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #3a6c3a; /* Tamnija zelena pri fokusu */
+    box-shadow: 0 0 8px rgba(58, 108, 58, 0.4); /* Efekt svjetlosti pri fokusu */
+    outline: none;
+}
+
+button {
+    background-color: #4C8C4A; /* Tamno zelena */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a6c3a; /* Tamnija zelena pri hoveru */
+}
+
+/* Efekti za linkove */
+a {
+    color: #4C8C4A; /* Zelena boja za linkove */
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animacija pri učitavanju stranice */
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsivnost */
+@media (max-width: 768px) {
+    form {
+        padding: 25px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+

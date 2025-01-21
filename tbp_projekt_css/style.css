@@ -1,0 +1,57 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e8f5e9; /* Lagana zelena pozadina */
+}
+
+h1 {
+    text-align: center;
+    color: #2e7d32; /* Tamnija zelena za naslov */
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Bijela pozadina za tablicu */
+    border-radius: 12px; /* Zaobljeni rubovi */
+    overflow: hidden; /* Zaobljeni rubovi utječu na sadržaj */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lagana sjena */
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #c8e6c9; /* Svijetlo zelena granica */
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background-color: #66bb6a; /* Pastelno zelena za zaglavlja */
+    color: #ffffff; /* Bijeli tekst */
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f8e9; /* Svijetla nijansa zelene za redove */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* Bijela za ostale redove */
+}
+
+tbody tr:hover {
+    background-color: #dcedc8; /* Lagano tamnija zelena pri hoveru */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Glatka tranzicija */
+}
+
+table caption {
+    margin: 10px;
+    font-size: 1.2em;
+    color: #388e3c; /* Tamnija zelena */
+    font-weight: bold;
+}
+

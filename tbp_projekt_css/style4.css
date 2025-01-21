@@ -1,0 +1,61 @@
+/* Opći stilovi */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f7f4; /* Svijetla zelena pozadina */
+    color: #3d4d34; /* Tamnozelena boja teksta */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Stil za glavni naslov */
+h1 {
+    color: #5f8c5f; /* Prirodno zelena */
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+/* Stil za listu meta podataka */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+li {
+    background-color: #e1d9c6; /* Svijetlo smeđa pozadina */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+li strong {
+    color: #4b5d3a; /* Zelenkasto smeđa boja za naslove */
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #b7a08b; /* Zemljana boja za horizontalnu liniju */
+    margin: 10px 0;
+}
+
+/* Stil za tekst kada nema meta podataka */
+p {
+    color: #6e7d3d; /* Prigušena zelena boja */
+    font-style: italic;
+    text-align: center;
+}
+
+/* Ovisno o uređaju, odredimo širinu */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    li {
+        padding: 12px;
+    }
+}

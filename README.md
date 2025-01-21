@@ -12,3 +12,4 @@ Sadrži aplikaciju za upravljanje korisnicima, uključujući kreiranje, brisanje
 TBP_projekt2dio
 Aplikacija za prikaz stranice koja demonstrira utjecaj različitih uloga korisnika. Na temelju uloga, korisnici mogu vidjeti specifične informacije i pristupati različitim funkcijama aplikacije.
 
+Potrebno je iz mapa izvuci datoteke i podijelit kako je navedeno ta TBP_projekt i TBP_projekt2dio

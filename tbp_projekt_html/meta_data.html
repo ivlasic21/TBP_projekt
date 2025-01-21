@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Podaci Korisnika</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
+</head>
+<body>
+    <h1>Meta Podaci za korisnika: {{ email }}</h1>
+    
+    {% if meta_data %}
+        <ul>
+            {% for item in meta_data %}
+                <li>
+                    <strong>Tip:</strong> {{ item[0] }} <br>
+                    <strong>Opis:</strong> {{ item[1] }} <br>
+                    <strong>Vrijednost:</strong> {{ item[2] }} <br>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nema meta podataka za ovog korisnika.</p>
+    {% endif %}
+</body>
+</html>

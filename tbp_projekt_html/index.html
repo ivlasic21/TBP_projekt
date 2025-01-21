@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Table</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Users Table</h1>
+    <!-- Button for logging out -->
+    <a href="{{ url_for('logout') }}" class="button">Odlogiraj se</a>
+    <a href="{{ url_for('add_user_form') }}" class="button">Dodaj novog korisnika</a>
+    <table>
+      <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Datum Zaposlenja</th>
+            <th>Uloga</th>
+            <th>Akcije</th> <!-- Nova kolona za akcije -->
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>{{ user[5] }}</td>
+            <td>{{ user[6] }}</td>
+            <td>
+                <!-- Dugme za promjenu uloge -->
+                <a href="{{ url_for('edit_user_role', user_id=user[0]) }}" class="button">Promijeni ulogu</a>
+                <!-- Dugme za meta podatke -->
+                <a href="{{ url_for('user_metadata', email=user[3]) }}" class="button">Meta Podaci</a>
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</body>
+</html>

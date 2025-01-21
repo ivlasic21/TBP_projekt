@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popis projekata</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Popis projekata</h1>
+        <nav>
+            {% if can_create %}
+                <a href="/add_project">Dodaj novi projekt</a>
+            {% endif %}
+            <a href="/logout">Odjava</a>
+        </nav>
+    </header>
+
+    <main>
+        {% if projects %}
+            <section>
+                {% for project in projects %}
+                    <article>
+                        <h2>{{ project.naziv }}</h2> <!-- Naziv projekta -->
+                        <p><strong>Opis:</strong> {{ project.opis }}</p> <!-- Opis projekta -->
+                        <p><strong>Datum početka:</strong> {{ project.datum_započinjanja }}</p>
+                        <p><strong>Datum završetka:</strong> {{ project.datum_završetka }}</p>
+                        <p><strong>Status:</strong> {{ project.status }}</p>
+                        
+                        <p><strong>Korisnici:</strong></p>
+                        <ul>
+                            {% if project.korisnici %}
+                                {% for user in project.korisnici %}
+                                    <li>{{ user.ime }} {{ user.prezime }}</li> <!-- Ime i prezime korisnika -->
+                                {% endfor %}
+                            {% else %}
+                                <li>Nema dodijeljenih korisnika.</li>
+                            {% endif %}
+                        </ul>
+
+                        {% if can_delete %}
+                        <!-- Dugme za brisanje projekta -->
+                        <form action="{{ url_for('delete_project', project_id=project.id) }}" method="POST" onsubmit="return confirm('Jeste li sigurni da želite obrisati ovaj projekt?');">
+                            <button type="submit" class="btn btn-delete">Obriši projekt</button>
+                        </form>
+                        {% endif %}
+
+                        {% if can_edit %}
+                        <a href="{{ url_for('edit_project', project_id=project.id) }}" class="btn btn-edit">Uredi projekt</a>
+                        {% endif %}
+                    </article>
+                {% endfor %}
+            </section>
+        {% else %}
+            <p>Nema projekata za prikaz.</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ current_year }} Moja aplikacija</p>
+    </footer>
+</body>
+</html>

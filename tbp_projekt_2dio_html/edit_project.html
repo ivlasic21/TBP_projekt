@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uredi projekt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}">
+
+</head>
+<body>
+    <h1>Uredi projekt</h1>
+    <form method="POST" action="{{ url_for('edit_project', project_id=project['id']) }}">
+        <label for="naziv">Naziv projekta:</label>
+        <input type="text" id="naziv" name="naziv" value="{{ project['naziv'] }}" required>
+        <br>
+
+        <label for="opis">Opis projekta:</label>
+        <textarea id="opis" name="opis">{{ project['opis'] }}</textarea>
+        <br>
+
+        <label for="datum_pocetka">Datum početka:</label>
+        <input type="date" id="datum_pocetka" name="datum_pocetka" value="{{ project['datum_pocetka'] }}" required>
+        <br>
+
+        <label for="datum_završetka">Datum završetka:</label>
+        <input type="date" id="datum_završetka" name="datum_završetka" value="{{ project['datum_završetka'] }}">
+        <br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="planiran" {% if project['status'] == 'planiran' %}selected{% endif %}>Planiran</option>
+            <option value="u tijeku" {% if project['status'] == 'u tijeku' %}selected{% endif %}>U tijeku</option>
+            <option value="završen" {% if project['status'] == 'završen' %}selected{% endif %}>Završen</option>
+        </select>
+        <br>
+
+        <label for="users">Povezani korisnici:</label>
+        <br>
+        <div id="users">
+            {% for user in all_users %}
+                <input type="checkbox" id="user_{{ user[0] }}" name="users" value="{{ user[0] }}" 
+                    {% if user[0] in project_users %}checked{% endif %}>
+                <label for="user_{{ user[0] }}">{{ user[1] }}</label>
+                <br>
+            {% endfor %}
+        </div>
+        <br>
+
+        <button type="submit">Spremi promjene</button>
+    </form>
+
+    <a href="{{ url_for('index') }}">Povratak na početnu stranicu</a>
+</body>
+</html>

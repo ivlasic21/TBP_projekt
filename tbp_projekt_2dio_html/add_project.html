@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj novi projekt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Dodaj novi projekt</h1>
+        <nav>
+            <a href="/">Nazad na popis projekata</a>
+            <a href="/logout">Odjava</a>
+        </nav>
+    </header>
+
+    <main>
+        <form action="/add_project" method="POST">
+            <div>
+                <label for="naziv">Naziv projekta:</label>
+                <input type="text" id="naziv" name="naziv" required>
+            </div>
+
+            <div>
+                <label for="opis">Opis projekta:</label>
+                <textarea id="opis" name="opis" rows="5"></textarea>
+            </div>
+
+            <div>
+                <label for="datum_pocetka">Datum početka:</label>
+                <input type="date" id="datum_pocetka" name="datum_pocetka" required>
+            </div>
+
+            <div>
+                <label for="datum_zavrsetka">Datum završetka:</label>
+                <input type="date" id="datum_zavrsetka" name="datum_zavrsetka" required>
+            </div>
+
+            <div>
+                <label for="status">Status projekta:</label>
+                <select id="status" name="status" required>
+                    <option value="u tijeku">U tijeku</option>
+                    <option value="završeni">Završeni</option>
+                    <option value="otkazani">Otkazani</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="korisnici">Odaberi korisnike za projekt:</label>
+                <select id="korisnici" name="korisnici" multiple required>
+                    {% if korisnici %}
+                        {% for korisnik in korisnici %}
+                            <option value="{{ korisnik[0] }}">{{ korisnik[1] }} {{ korisnik[2] }}</option>
+                        {% endfor %}
+                    {% else %}
+                        <option disabled>Nema dostupnih korisnika</option>
+                    {% endif %}
+                </select>
+                <small>Drži tipku Ctrl ili Command (na Macu) za odabir više korisnika.</small>
+            </div>                        
+
+            <div>
+                <button type="submit">Dodaj projekt</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; {{ current_year }} Moja aplikacija</p>
+    </footer>
+</body>
+</html>

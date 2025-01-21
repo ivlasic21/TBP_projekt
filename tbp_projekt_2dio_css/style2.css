@@ -1,0 +1,161 @@
+/* Resetiranje osnovnih stilova */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Osnovni font i boje */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f2e4; /* Svijetla bež boja, poput pijeska */
+    color: #3e3b3a; /* Tamna smeđa za tekst */
+    line-height: 1.6;
+}
+
+/* Glavni sadržaj stranice */
+header {
+    background-color: #6d8e34; /* Zeleni ton, podsjeća na prirodu */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Stil za glavni dio stranice */
+main {
+    padding: 30px 10%;
+}
+
+/* Stil za sekciju s projektima */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+/* Stil za pojedinačni projekt */
+article {
+    background-color: #ffffff; /* Svijetla pozadina za kontrast */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 280px; /* Minimalna širina */
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: scale(1.05); /* Malo povećanje pri hoveru za interaktivnost */
+}
+
+/* Stil za naslov projekta */
+article h2 {
+    font-size: 1.8rem;
+    color: #4d7c31; /* Tamnija zelena za naslove */
+    margin-bottom: 10px;
+}
+
+/* Stil za informacije o projektu */
+article p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+/* Stil za popis korisnika */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #4f4f4f;
+}
+
+/* Stil za footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #6d8e34; /* Zeleni ton kao u headeru */
+    color: white;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Stil za responsivnost */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    article {
+        width: 80%;
+    }
+}
+
+.btn-edit {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #007bff; /* Plava boja gumba */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3; /* Tamnija plava boja za hover efekt */
+}
+
+/* Stil za dugme brisanja */
+.btn-delete {
+    background-color: #a107079d; /* Plava boja */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-delete:hover {
+    background-color: #880000; /* Tamnija plava pri hoveru */
+}
+

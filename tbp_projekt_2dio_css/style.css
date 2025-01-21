@@ -1,0 +1,137 @@
+/* Resetiranje osnovnih stilova */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Osnovni font i boje */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f2e4; /* Svijetla bež boja, poput pijeska */
+    color: #3e3b3a; /* Tamna smeđa za tekst */
+    line-height: 1.6;
+}
+
+/* Glavni header stil */
+header {
+    background-color: #6d8e34; /* Zeleni ton, podsjeća na prirodu */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Glavni dio stranice */
+main {
+    padding: 30px 10%;
+}
+
+/* Stil za formu */
+form {
+    background-color: #ffffff; /* Svijetla pozadina za formu */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Stil za form elemente */
+label {
+    font-size: 1.1rem;
+    color: #4d7c31; /* Tamno zelena za nazive */
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #f9f9f9;
+    color: #3e3b3a;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #6d8e34; /* Zeleni okvir pri fokusu */
+    outline: none;
+}
+
+/* Stil za tekstualni unos */
+textarea {
+    resize: vertical;
+}
+
+select {
+    padding-right: 30px;
+}
+
+/* Mali tekst ispod odabira korisnika */
+small {
+    font-size: 0.9rem;
+    color: #7b7b7b;
+}
+
+/* Stil za gumb */
+button {
+    background-color: #6d8e34; /* Zeleni ton za gumb */
+    color: white;
+    font-size: 1.1rem;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5b7f2b; /* Tamnija zelena pri hoveru */
+}
+
+/* Footer stil */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #6d8e34; /* Zeleni ton kao u headeru */
+    color: white;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsivnost */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px;
+        width: 90%;
+    }
+}

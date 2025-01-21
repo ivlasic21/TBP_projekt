@@ -1,0 +1,135 @@
+/* Resetiranje osnovnih stilova */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Osnovni font i boje */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f2e4; /* Svijetla bež boja */
+    color: #3e3b3a; /* Tamno smeđa */
+    line-height: 1.6;
+}
+
+/* Glavni header */
+header {
+    background-color: #6d8e34; /* Zelena boja */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Sadržaj stranice */
+main {
+    padding: 30px 10%;
+}
+
+/* Stil za formu */
+form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Stil elemenata unutar forme */
+label {
+    font-size: 1.1rem;
+    color: #4d7c31; /* Tamno zelena */
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #3e3b3a;
+    width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #6d8e34;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+select {
+    padding-right: 30px;
+}
+
+/* Mali tekst */
+small {
+    font-size: 0.9rem;
+    color: #7b7b7b;
+}
+
+/* Gumb */
+button {
+    background-color: #6d8e34;
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5b7f2b;
+}
+
+/* Footer */
+footer {
+    background-color: #6d8e34;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* Responsivnost */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+}
